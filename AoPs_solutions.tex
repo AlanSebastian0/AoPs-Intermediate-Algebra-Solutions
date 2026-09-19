@@ -1,0 +1,80 @@
+\documentclass[10pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[margin=0.5in]{geometry}
+\title{My AoPs Solution Intermediate Algebra}
+\author{Alan Sebastian}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Substitution Exercises}
+\begin{enumerate}
+    \item Find all ordered pairs $(x,y)$ such that $-x+2y = 8$ and $x-y=-5$
+    $$y=x+5$$
+    Substituting into the first equation we get $-x+2(x+5)=8$
+    $$x+10=8$$
+    $$x=-2$$
+    Substituting into the first equation we get $2+2y=8$
+    $$\therefore y=3$$
+    $$(x,y)=(-2,3)$$
+
+    \item Find $b$ if $a$ is constant such that $3ax-8b=4x+6a$ for all values of $x$.
+    Since the equation is true for all values of $x$ it means that $x$ can be set to 0. Thus
+    $$-8b=6a$$
+    It also means that $x=1$.
+    $\therefore 3a-8b=4+6a$. Since $-8b = 6a$
+    $$3a+6a=4+6a$$
+    $$3a=4 \therefore a=\frac{4}{3}$$
+    Now that we have $a$ we are able to find $b$.
+    $$-8b=6a$$
+    $$-8b=8 \therefore b=-1$$
+
+    \item Find all ordered pairs $(x,y)$ such that $x+y=6$ and $x^2+xy+2y^2=32$.
+    From the first equation we get that $x=6-y$ \\
+    By substitution into the second equation we get
+    $$(6-y)^2 + y(6-y) + 2y^2 = 32$$
+    $$36-12y+y^2 + 6y-y^2 + 2y^2=32$$
+    $$2y^2-6y+4=0$$
+    $$y^2-3y+2=0$$
+    $$(y-1)(y-2)=0$$
+    $\therefore y = 1,2$
+    Then substitute $y$ into the first equation $x+y=6$
+    To get that $x=5,4$.
+    Therefore the ordered pairs are $(4,2), (5,1)$.
+
+    \item Solve the system of equations:
+    $$x+2y-z=5$$
+    $$3x+2y+z=11$$
+    $$(x+2y)^2-z^2=15$$
+    Here I can identify the $x+2y$ in equation 1 and 3. $x+2y=5+z$
+    \begin{gather}
+        (5+z)^2-z^2=15 \\
+        25+10z+z^2-z^2=15 \\
+        10z+25=15 \\
+        10z=-10, \therefore z=-1
+    \end{gather}
+    Now that we have $z$ we can substitute it into the other equations.
+    \begin{gather}
+        x+2y+1=5 \qquad x+2y = 4 \\
+        3x+2y-1=11 \qquad 3x+2y=12
+    \end{gather}
+    Now the last equation can be rewritten as $2x+(x+2y)=12$
+    \qquad $2x+4=12$
+    $\therefore x=4$
+    Now we substitute $x$ back into the first equation to get $4+2y=4 \therefore y=0$.
+\end{enumerate}
+
+\section{Elimination Exercises}
+\begin{enumerate}
+    \item Find all ordered pairs $(a,b)$ such that $3a-2b=-8$ and $5a+4b=5$ \\
+    Multiply the first equation by 2 so that $-2b$ becomes $-4b$, resulting in an easy addition of the two equations.
+    $$6a-4b=-16$$
+    Now add the two equations and we get
+    $$11a=-11$$
+    Thus $a=-1$. Substitute back into the first equation to get
+    $$-3-2b=-8 \therefore -2b=-5, b=\frac{5}{2}$$
+    Thus the ordered pair is $(a,b)=\left(-1,\frac{5}{2}\right)$.
+\end{enumerate}
+
+\end{document}   
