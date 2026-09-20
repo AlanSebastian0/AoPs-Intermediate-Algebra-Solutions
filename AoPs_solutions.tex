@@ -2,20 +2,22 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage[margin=0.5in]{geometry}
+
 \title{My AoPs Solution Intermediate Algebra}
 \author{Alan Sebastian}
 \date{\today}
 \begin{document}
 \maketitle
-
+\noindent
 \section{Substitution Exercises}
+
 \begin{enumerate}
     \item Find all ordered pairs $(x,y)$ such that $-x+2y = 8$ and $x-y=-5$
     $$y=x+5$$
     Substituting into the first equation we get $-x+2(x+5)=8$
     $$x+10=8$$
     $$x=-2$$
-    Substituting into the first equation we get $2+2y=8$
+    Substituting into the second equation we get $2+2y=8$
     $$\therefore y=3$$
     $$(x,y)=(-2,3)$$
 
@@ -48,12 +50,13 @@
     $$3x+2y+z=11$$
     $$(x+2y)^2-z^2=15$$
     Here I can identify the $x+2y$ in equation 1 and 3. $x+2y=5+z$
-    \begin{gather}
-        (5+z)^2-z^2=15 \\
-        25+10z+z^2-z^2=15 \\
-        10z+25=15 \\
-        10z=-10, \therefore z=-1
-    \end{gather}
+    \begin{align}
+      (5+z)^2-z^2 &=15 \\
+        25+10z+z^2-z^2 &=15 \\
+        10z+25 &= 15 \\
+        10z &= -10 \\ 
+        z &= -1
+    \end{align}
     Now that we have $z$ we can substitute it into the other equations.
     \begin{gather}
         x+2y+1=5 \qquad x+2y = 4 \\
@@ -63,10 +66,12 @@
     \qquad $2x+4=12$
     $\therefore x=4$
     Now we substitute $x$ back into the first equation to get $4+2y=4 \therefore y=0$.
+    $$\boxed{(x,y,z)=(4,0,-1)}$$
 \end{enumerate}
 
 \section{Elimination Exercises}
 \begin{enumerate}
+
     \item Find all ordered pairs $(a,b)$ such that $3a-2b=-8$ and $5a+4b=5$ \\
     Multiply the first equation by 2 so that $-2b$ becomes $-4b$, resulting in an easy addition of the two equations.
     $$6a-4b=-16$$
@@ -75,6 +80,48 @@
     Thus $a=-1$. Substitute back into the first equation to get
     $$-3-2b=-8 \therefore -2b=-5, b=\frac{5}{2}$$
     Thus the ordered pair is $(a,b)=\left(-1,\frac{5}{2}\right)$.
+    \item Let x and y be real numbers satisfying $\frac{2}{x}=\frac{y}{3}=\frac{x}{y}$ \\
+      By cross multiplication between the first and second term we get $6=xy$, second and third terms result in $y^2=3x$ \\
+      And the first and third terms when cross multiplied result in $2y=x^2$ multiplying both sides by x we get $2xy=x^3$ \\
+      Since we know that $2xy=6$ This means that $x^3=2(6)$, $\boxed{x^3=12}$
+    \item Find all order pairs $(x,y)$ such that $x^3y^2=2^{34}$ and $x^4y=2^{32}$
+      Square both sides in the second equation so that we can get $y^2$, $x^8y^2=2^{64}$ Now we divide the second equation by the first
+      $$\frac{x^8y^2}{x^3y^2}=\frac{2^{64}}{2^{34}}$$
+        $$x^5=2^{30} \therefore x=6 $$ Substituting this into the first equation we get
+      $$64^3(y^2)=2^{34} \therefore y=256$$
+      $$\boxed{(x,y)=(64,256)}$$
+
+    \item Find the solution to the system of equations \\
+      \[
+        \begin{cases}
+          x+2z = 1 \\
+          -xy + 2z = 13 \\
+          xy + z^2 = 14
+        \end{cases}
+      \] 
+      I can directly see a similarity between the second and the last equation. Adding the two equations together we can cancel out the $xy$. This results in
+      \begin{align*}
+          z^2+2z=-1 \\
+          z^2+2z+1=0 \\
+          (z+1)^2=0 \therefore z=-1
+      \end{align*}
+      Substituting $z$ into the first equation we get $x-2=1 \therefore x=3$
+      Substitute $x$ and $z$ into equation two resulting in $-3y-2=13$ $$-3y=15 \therefore y=-5$$
+      \centerline{$\boxed{(x,y,z)=(3,-5,-1)}$}
+    \item Find all r and s such that $r^2-2rs=27$ and $rs-2s^2=9$
+      The equations can be rewritten as $r(r-2s)=27$ and $s(r-2s)=9$. Divide the equations to get rid of the factors
+      \begin{align*}
+          \frac{r(r-2s)}{s(r-2s)} = \frac{27}{9} \\
+          \frac{r}{s}=3 \therefore r=3s \\
+          \text{Substitute into the second equation to get } 3s^2-2s^2=9 \\
+          s^2=9 \therefore s=\pm3
+      \end{align*}
+      When $s=3, r=9$ and when $s=-3, r=-9$ \qquad
+      $\boxed{(r,s)=(3,9),(-3,-9)}$
 \end{enumerate}
+\section{Larger Systems of Linear Equations}
+    \begin{enumerate}
+        \item Solve each of the following systems of equations
+    \end{enumerate}
 
 \end{document}   
