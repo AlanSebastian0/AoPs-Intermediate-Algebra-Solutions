@@ -1,20 +1,36 @@
 param (
+    [Parameter(Mandatory = $true)]
     [string]$texFile
 )
 
-# 1. Setup directory names
-$buildDir = "build"
-$pdfDir = "pdf"
+$workspaceDir = Split-Path -Parent $PSScriptRoot
+$sourcePath = if ([System.IO.Path]::IsPathRooted($texFile)) {
+    [System.IO.Path]::GetFullPath($texFile)
+} else {
+    [System.IO.Path]::GetFullPath((Join-Path $workspaceDir $texFile))
+}
+$buildDir = Join-Path $workspaceDir "build"
+$pdfDir = Join-Path $workspaceDir "pdf"
 
-# 2. Create output directories quietly
 New-Item -ItemType Directory -Force $buildDir, $pdfDir | Out-Null
 
-# 3. Put auxiliary files in build and the final PDF in pdf
-latexmk -pdf -interaction=nonstopmode -synctex=1 `
-    "-auxdir=$buildDir" "-outdir=$pdfDir" $texFile
+if (-not (Test-Path -LiteralPath $sourcePath -PathType Leaf)) {
+    throw "LaTeX source file not found: $sourcePath"
+}
 
-# SyncTeX data is auxiliary output, so keep it with the other build files.
-$synctexName = [System.IO.Path]::GetFileNameWithoutExtension($texFile) + ".synctex.gz"
+Push-Location $workspaceDir
+try {
+    latexmk -pdf -interaction=nonstopmode -synctex=1 `
+        "-auxdir=$buildDir" "-outdir=$pdfDir" $sourcePath
+    if ($LASTEXITCODE -ne 0) {
+        exit $LASTEXITCODE
+    }
+}
+finally {
+    Pop-Location
+}
+
+$synctexName = [System.IO.Path]::GetFileNameWithoutExtension($sourcePath) + ".synctex.gz"
 $synctexFile = Join-Path $pdfDir $synctexName
 if (Test-Path $synctexFile) {
     Move-Item $synctexFile (Join-Path $buildDir $synctexName) -Force

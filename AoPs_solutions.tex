@@ -13,7 +13,6 @@
 
 \begin{enumerate}
     \item Find all ordered pairs $(x,y)$ such that $-x+2y = 8$ and $x-y=-5$
-    hello there
     $$y=x+5$$
     Substituting into the first equation we get $-x+2(x+5)=8$
     $$x+10=8$$
@@ -72,7 +71,6 @@
 
 \section{Elimination Exercises}
 \begin{enumerate}
-
     \item Find all ordered pairs $(a,b)$ such that $3a-2b=-8$ and $5a+4b=5$ \\
     Multiply the first equation by 2 so that $-2b$ becomes $-4b$, resulting in an easy addition of the two equations.
     $$6a-4b=-16$$
@@ -118,10 +116,142 @@
           s^2=9 \therefore s=\pm3
       \end{align*}
       When $s=3, r=9$ and when $s=-3, r=-9$ \qquad
-      $\boxed{(r,s)=(3,9),(-3,-9)}$
+      $\boxed{(r,s)=(9,3),(-9,-3)}$
 \end{enumerate}
 \section{Larger Systems of Linear Equations}
     \begin{enumerate}
-        \item Solve each of the following testing take a look at this testing
+        \item Solve each of the three systems of linear equations.\\[0.5em]
+        \noindent
+        \begin{minipage}[t]{0.31\textwidth}
+          \textbf{(a)}
+          $
+          \begin{cases}
+            2a+b+c=2\\
+            5a-b+3c=5 \\
+            7a+4c=8
+          \end{cases}
+          $ \\[6pt]
+          Adding the first two equations we get $7a+4c=7$ which causes the linear system to be inconsistent. $\boxed{\text{No Solution}}$
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.31\textwidth}
+          \textbf{(b)}
+          $
+          \begin{cases}
+            2a+b+c=3\\
+            5a-b+2c=5 \\
+            7a+4c=8
+          \end{cases}
+          $ \\[6pt]
+          Adding the first equation to the second equation we get $7a+4c=8$.\\ Which means that equation (3) is a reduant equation \\ That means that system has infinitely many solutions.\\  Solving for c we get $$c=\frac{8-7a}{4}$$
+          Substituting into the first equation we get $$2a+b+\frac{8-7a}{4}=3$$
+          $$8a+4b+8-7a=12$$
+          $$4b+a=12$$ $$b=\frac{12-a}{4}$$
+          Now we have to solve for $c$ in terms of a. From the last equation we can see that $4c=8-7a$ $$c=\frac{8-7a}{4}$$
+          Thus $\boxed{(a,b,c)= \left(a,\frac{12-a}{4},\frac{8-7a}{4} \right)}$ 
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.31\textwidth}
+          \textbf{(c)}
+          $
+          \begin{cases}
+            x+y+z=13\\
+            x+y-z=-1 \\
+            x-y+z=9
+          \end{cases}
+          $ \\
+          By inspection the second and third equations can be added together to remove 2 variables doing so results in $2x=8 \therefore x=4$
+          Adding equation 1 and equation 3 we get $$2x+2z=22$$ $$x+z=11$$
+          Now substituting $x+z=11$ into the first equation we get $y+11=13 \therefore y=2$
+
+          Now substitute all of these into equation one to get $4+2+z=13$ $$z=7$$
+            $$\boxed{(x,y,z) = (4,2,7)}$$
+        \end{minipage}
+
+        \vspace{1em}
+        \item Given linear system
+          $\begin{cases}
+            a+b+c=6 \\
+            a+2b+3c=14 \\
+            2a+5b+8c=36
+          \end{cases}$ \\[8pt]
+          Find constants $k_1$ and $k_2$ such that $k_1$ times the first equation plus $k_2$ times the second equation equals the third equation.
+
+
+          Now the way I solved it was a brute force and not what was intended. I noticed that $3*14-6=36$ This can be seen as $k_1=-1$ and $k_2=3$
+
+          The actual way to solve it, which I had considered before finding this out was to use algebra and create a linear system relating $k_1$ and $k_2$ to the coefficents of $(a,b,c)$
+          This is done by $k_1(a+b+c)+k_2(a+2b+3c)=2a+5b+8c$. Here we would then create a linear system relating the $k$ and the coefficents of the third equation  \newpage
+        \item Solve each of the following systems of equations 
+
+
+          \textbf{(a)}
+          \begin{minipage}[t]{0.5\linewidth}
+            $\begin{cases}
+              a+3b-2c=18 \\
+              2a-4b+2c-d=-16 \\
+              -a+2b-5c+d=23 \\
+              3b-7c+d=35 \\
+            \end{cases}$
+            
+            Subtract the third equation from the last equation. This results in $a+b-2c=12$. Now from the first equation we can see that $-2c=18-a-3b$
+            Substitute this back we get  
+            \begin{align}
+              a+b-1-3b+18=12 \\
+              -2b=-6 \\
+              b=3
+            \end{align}
+            Now I have trouble working out when there are more than 3 variables, so I rewrite the system.
+
+
+            $\begin{cases}
+              a-2c=9 \\
+              2a+2c-d=-4 \\
+              -a-5c+d=17 \\
+              -7c+d=26
+            \end{cases}$\\[6pt]
+
+            Add the third and the second equation to get $a-3c=13$. Now from the first equation we can see that $a=9+2c$. Subsitute this to get $9+2c-3c=13$ $$-c=4, c=-4$$
+            Now substitute $c$ into the last equation to get
+            \begin{align*}
+              28+d=26 \\
+              d=-2 
+            \end{align*}
+            \centerline{$\boxed{(a,b,c,d)=(1,3,-4,-2)}$}
+          \end{minipage}
+          \begin{minipage}[t]{0.5\linewidth}
+            $\begin{cases}
+              x_1+x_2+x_3+x_4=1 \\
+              x_1+x_2-x_3=2 \\
+              x_2+x_3=0
+            \end{cases}$
+            
+
+
+            From the last equation we can see that $x_2=-x_3$
+            Now substitute this into all of the equations we get
+
+            $\begin{cases}
+              x_1+x_4=1 \\
+              x_1-2x_3=2 \\
+            \end{cases}$
+
+            THis results in 3 variables and 2 equations. This means that the system has infinite solutions. We can solve for $x_1$ in terms of $x_3$ and $x_4$.
+            From the second equation we can see that $x_1=2+2x_3$. Substitute this into the first equation to get $2+2x_3+x_4=1$ $$x_4=-1-2x_3$$
+
+            Now we have all of the variables in terms of $x_3$\\
+            $\boxed{(x_1,x_2,x_3,x_4)=(2+2x_3,-x_3,x_3,-1-2x_3)}$
+          \end{minipage}
+        
+
+        \item Suppose we a have system of 3 equations in 3 variables. Such that a times the first equation plus b times the secoond equation equals the third equation. Where $a$ and $b$ are non zero constants.
+          
+          \textbf{(a)} \quad
+          Must there be constants $c$ and $d$ such that $c$ times the second equation plus $d$ times the third equation equals the first equation?
+
+
+          Well from the information give $a(eq_1)+b(eq_2)=eq_3$. Now solving for $eq_1$ we get $eq_1=\frac{1}{a}eq_3-\frac{b}{a}eq_2$. This means that $c=-\frac{b}{a}$ and $d=\frac{1}{a}$.
+          \textbf{(b)} \quad
+          If the answer to part (a) is "yes", is it possible to find $c$ and $d$ in terms of $a$ and $b$?
+          Is we can find $c$ and $d$ in terms of $a$ and $b$ as shown above. $\boxed{c=-\frac{b}{a},d=\frac{1}{a}}$
+
     \end{enumerate}
 \end{document}   
